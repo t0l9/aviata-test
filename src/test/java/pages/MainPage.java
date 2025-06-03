@@ -6,13 +6,12 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import data.Language;
 import io.qameta.allure.Step;
-import org.junit.jupiter.params.provider.Arguments;
 
 
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
+
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.withText;
@@ -24,7 +23,6 @@ public class MainPage {
     private final String russianLanguage = "Русский";
     private final String moscowCity = "Москва";
     private final String bookingSearchText = "Искать жилье на Booking.com";
-    private final String freedomFooterLogo = "https://aviata.kz/static/images/freedom/freedom-travel-logo-244x40.svg";
     private final SelenideElement seccessButton = $("[type='button']");
     private final SelenideElement freedomLogoFooter = $("figure[aria-label*='Freedom Travel']");
     private final SelenideElement moveFromElement = $("[placeholder='Откуда']");
@@ -61,7 +59,6 @@ public class MainPage {
 
     @Step("Проверяем, что появился всплывающий баннер")
     public MainPage bannerShouldBeAppear() {
-
         if (banner.exists()) {
             banner.shouldBe(visible);
             $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
@@ -169,7 +166,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка кнопки с ценой")
+    @Step("Проверка кнопки со стоимостью билета")
     public MainPage checkPriceButton(){
         $("button:has(span:text('Найти от'))").shouldBe(visible);
         return this;
