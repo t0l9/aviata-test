@@ -11,13 +11,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import pages.MainPage;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.stream.Stream;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
 
 
 public class MainPagesTests extends TestBase{
@@ -53,9 +48,7 @@ public class MainPagesTests extends TestBase{
                 .checkFooterLogoElement()
                 .checkBannersContent()
                 .checkFooterElements();
-
     }
-
 
 
     @Test
@@ -109,6 +102,7 @@ public class MainPagesTests extends TestBase{
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
         mainPage.preconditions()
+                .clickLanguage()
                 .checkButtonsLanguage(language, list);
     }
 

@@ -49,7 +49,6 @@ public class MainPage {
     public MainPage preconditions(){
         openPage();
         bannerShouldBeAppear();
-        removeBanner();
         return this;
     }
 
