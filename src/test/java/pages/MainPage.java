@@ -24,8 +24,7 @@ public class MainPage {
     private final String russianLanguage = "Русский";
     private final String moscowCity = "Москва";
     private final String bookingSearchText = "Искать жилье на Booking.com";
-    private final SelenideElement seccessButton = $("[type='button']");
-    private final SelenideElement okButton = $(".ui-btn");
+    private final SelenideElement modal = $(".app-modal");
     private final SelenideElement freedomLogoFooter = $("figure[aria-label*='Freedom Travel']");
     private final SelenideElement moveFromElement = $("[placeholder='Откуда']");
     private final SelenideElement moveToElement = $("[placeholder='Куда']");
@@ -80,10 +79,9 @@ public class MainPage {
 
     @Step("Закрываем модальное окно, если оно появилось")
     public MainPage closeModalIfPresent() {
-        SelenideElement modal = $(".app-modal");
 
         if (modal.isDisplayed()) {
-            modal.$(byText("Хорошо!")).click(); // или найди другую кнопку, если она отличается
+            modal.$(byText("Хорошо!")).click();
             modal.shouldBe(Condition.disappear);
         }
 
