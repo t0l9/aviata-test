@@ -24,6 +24,7 @@ public class MainPage {
     private final String moscowCity = "Москва";
     private final String bookingSearchText = "Искать жилье на Booking.com";
     private final SelenideElement seccessButton = $("[type='button']");
+    private final SelenideElement okButton = $(".ui-btn");
     private final SelenideElement freedomLogoFooter = $("figure[aria-label*='Freedom Travel']");
     private final SelenideElement moveFromElement = $("[placeholder='Откуда']");
     private final SelenideElement moveToElement = $("[placeholder='Куда']");
@@ -50,7 +51,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Открываем главную страницу {pageUrl}")
+    @Step("Открываем главную страницу")
     public MainPage openPage(){
         open(pageUrl);
         return this;
@@ -59,7 +60,7 @@ public class MainPage {
     @Step("Проверяем, что появился всплывающий баннер")
     public MainPage bannerShouldBeAppear() {
         if (banner.isDisplayed()) {
-            SelenideElement okButton = $(".popup-banner .ui-btn");
+
             okButton.shouldBe(visible).shouldHave(Condition.exactText("Хорошо!")).click();
         }
         return this;
@@ -67,16 +68,9 @@ public class MainPage {
 
 
 
-
     @Step("Убираем всплывающий баннер")
     public MainPage removeBanner(){
         $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
-        return this;
-    }
-
-    @Step("Кликаем на смену языка")
-    public MainPage languageClick(){
-        seccessButton.$(withText(russianLanguage)).click();
         return this;
     }
 
