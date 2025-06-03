@@ -102,7 +102,7 @@ public class MainPagesTests extends TestBase{
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
         mainPage.preconditions()
-                .clickLanguage()
+                .languageClick()
                 .checkButtonsLanguage(language, list);
     }
 

@@ -56,15 +56,16 @@ public class MainPage {
         return this;
     }
 
-
     @Step("Проверяем, что появился всплывающий баннер")
     public MainPage bannerShouldBeAppear() {
-        if (banner.exists()) {
-            banner.shouldBe(visible);
-            $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
+        if (banner.isDisplayed()) {
+            SelenideElement okButton = $(".popup-banner .ui-btn");
+            okButton.shouldBe(visible).shouldHave(Condition.exactText("Хорошо!")).click();
         }
         return this;
     }
+
+
 
 
     @Step("Убираем всплывающий баннер")
