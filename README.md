@@ -1,5 +1,5 @@
 
-<a href="https://freedom-travel.kz/"> <img src="media/img.png" width="200" height="300"> 
+<a href="https://freedom-travel.kz/"> <img src="media/img.png" width="300" height="200"> 
 <h1 >Проект по автоматизации тестирования для компании <a href="https://freedom-travel.kz/">Aviata</a></h1> 
 
 ## ☑️ Содержание:
@@ -81,9 +81,6 @@ ____
 ____
 
 <p align="center">
-  <video width="550" height="350" controls>
-    <source src="media/b2d1eecaef1a93caf3acaad16e0077af.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<img title="Selenoid Video" src="media/ezgif-1c8fb2f8998e43.gif)" width="550" height="350"  alt="video">   
 </p>
 
