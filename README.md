@@ -77,12 +77,9 @@ ____
 </p>
 
 ____
-## <img alt="Selenoid" height="25" src="media/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+## <img alt="Selenoid" height="25" src="media/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов в Selenoid
 ____
-<p align="center">
-<img title="Selenoid Video" src="media/news.gif" width="550" height="350"  alt="video">   
-</p>
 
 <p align="center">
-<img title="Selenoid Video" src="media/contact.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/b2d1eecaef1a93caf3acaad16e0077af.mp4" width="550" height="350"  alt="video">   
 </p>
