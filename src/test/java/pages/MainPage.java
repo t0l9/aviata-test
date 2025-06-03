@@ -22,9 +22,11 @@ public class MainPage {
 
     private final String pageUrl = "https://freedom-travel.kz/";
     private final String russianLanguage = "Русский";
+    private final String moscowCity = "Москва";
     private final String bookingSearchText = "Искать жилье на Booking.com";
     private final String freedomFooterLogo = "https://aviata.kz/static/images/freedom/freedom-travel-logo-244x40.svg";
     private final SelenideElement seccessButton = $("[type='button']");
+    private final SelenideElement freedomLogoFooter = $("figure[aria-label*='Freedom Travel']");
     private final SelenideElement moveFromElement = $("[placeholder='Откуда']");
     private final SelenideElement moveToElement = $("[placeholder='Куда']");
     private final ElementsCollection banners = $$("ul.grid.grid-cols-4 > li");
@@ -48,7 +50,6 @@ public class MainPage {
         openPage();
         bannerShouldBeAppear();
         removeBanner();
-
         return this;
     }
 
@@ -91,8 +92,8 @@ public class MainPage {
 
     @Step("Выбираем куда мы отправляемся")
     public MainPage moveTo(){
-        moveToElement.setValue("Москва");
-        $$("div[tabindex='0']").findBy(text("Москва")).click();
+        moveToElement.setValue(moscowCity);
+        $$("div[tabindex='0']").findBy(text(moscowCity)).click();
         return this;
     }
 
@@ -145,7 +146,6 @@ public class MainPage {
     public MainPage checkBannersContent() {
 
         banners.shouldHave(CollectionCondition.size(4));
-
         for (int i = 0; i < expectedTitles.length; i++) {
             banners.get(i).shouldHave(text(expectedTitles[i])).shouldBe(visible);
         }
@@ -154,7 +154,6 @@ public class MainPage {
 
     @Step("Клик по кнопке куда угодно с Главной страницы")
     public MainPage anywhereButtonClick(){
-
         $(withText("Куда угодно")).click();
         return this;
     }
@@ -174,20 +173,17 @@ public class MainPage {
     @Step("Проверка кнопки с ценой")
     public MainPage checkPriceButton(){
         $("button:has(span:text('Найти от'))").shouldBe(visible);
-
         return this;
     }
 
 
     @Step("Проверяем наличие логотипа компании в футере")
     public MainPage checkFooterLogoElement() {
-
-        $("figure[aria-label*='Freedom Travel']").scrollIntoView(true).shouldBe(visible);
-
+        freedomLogoFooter.scrollIntoView(true).shouldBe(visible);
         return this;
     }
 
-    @Step("Проверяем что элемент {1} находится в футере")
+    @Step("Проверяем что элемент {0} соответствует {1} в футере")
     public MainPage checkFooterElements() {
         footerLinks.forEach((href, linkText) -> {
             SelenideElement link = $("a[href='" + href + "']");
@@ -196,10 +192,5 @@ public class MainPage {
         });
         return this;
     }
-
-
-
-
-
 
 }

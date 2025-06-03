@@ -4,6 +4,7 @@ import data.Language;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -24,8 +25,6 @@ public class MainPagesTests extends TestBase{
     MainPage mainPage = new MainPage();
 
 
-
-
     @Test
     @Feature("Проверка наличия информационных блоков на главной странице")
     @Story("Проверка баннеров")
@@ -33,7 +32,7 @@ public class MainPagesTests extends TestBase{
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "test", url = "")
     @DisplayName("Наличие информационных блоков на главной странице")
-    @Tag("banners")
+    @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("information")})
     void checkInformationBloc(){
         mainPage.preconditions()
                 .checkInfoBlockWithBunners()
@@ -48,7 +47,7 @@ public class MainPagesTests extends TestBase{
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "test", url = "")
     @DisplayName("Проверка отображения логотипа и ссылок")
-    @Tag("banners")
+    @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("footer")})
     void checkFooterBlock(){
         mainPage.preconditions()
                 .checkFooterLogoElement()
@@ -66,7 +65,7 @@ public class MainPagesTests extends TestBase{
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "test", url = "")
     @DisplayName("Проверка кнопки Куда Угодно с Главной страницы")
-    @Tag("banners")
+    @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
     void checkAnywhereButtonFromMainPage(){
         mainPage.preconditions()
                 .anywhereButtonClick()
@@ -83,7 +82,7 @@ public class MainPagesTests extends TestBase{
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "test", url = "")
     @DisplayName("Поиск авиаперелетов с главной страницы")
-    @Tag("search")
+    @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
     void mainPageSearchTravelTest(){
 
         mainPage.preconditions()
@@ -106,7 +105,7 @@ public class MainPagesTests extends TestBase{
 
     @ParameterizedTest
     @MethodSource
-    @Tag("localization")
+    @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("localization")})
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
         mainPage.preconditions()

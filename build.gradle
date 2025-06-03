@@ -47,4 +47,22 @@ tasks.withType(Test) {
     }
 }
 
+task auto_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("auto")
+    }
+}
+
+task regression_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("regression")
+    }
+}
+
+task smoke_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+}
+
 
