@@ -162,7 +162,7 @@ public class MainPage {
 
     @Step("Проверяем, что элемент 'Казахстан' отображается")
     public MainPage checkH2TextSearch(){
-        $("h2:text('Казахстан')").shouldBe(visible);
+        $("h2.text-lg.font-bold").shouldHave(text("Казахстан"));
         return this;
     }
 
@@ -179,7 +179,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверяем что элемент {0} соответствует {1} в футере")
+    @Step("Проверяем что элемент {href} соответствует {linkText} в футере")
     public MainPage checkFooterElements() {
         footerLinks.forEach((href, linkText) -> {
             SelenideElement link = $("a[href='" + href + "']");
