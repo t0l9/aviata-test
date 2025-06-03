@@ -81,6 +81,6 @@ ____
 ____
 
 <p align="center">
-<img title="Selenoid Video" src="media/ezgif-1c8fb2f8998e43.gif)" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/video1.gif" width="550" height="350"  alt="video">   
 </p>
 
