@@ -57,3 +57,45 @@
 **Локальный запуск**
 ```bash
 gradle clean UseTech
+```
+
+**Запуск с параметрами**
+```bash
+-Dbrowser=chrome -DbrowserSize=1920x1080 -DbrowserVersion=128.0
+```
+
+**Удалённый запуск через Jenkins**
+```bash
+clean UseTech
+-Dbrowser="${BROWSER}"
+-DbrowserSize="${BROWSER_SIZE}"
+-DbrowserVersion="${BROWSER_VERSION}"
+-DbrowserRemote="https://log:pass@${BROWSER_REMOTE}/wd/hub"
+```
+
+---
+
+<a id="allure"></a>
+## 📊 Allure Report
+
+<p align="center">
+  <img src="media/AllureReport.jpg" width="850" alt="Allure Overview Dashboard"/>
+</p>
+
+---
+
+<a id="telegram"></a>
+## 📩 Уведомления в Telegram
+
+<p align="center">
+  <img src="media/tgAllert.jpg" width="550" alt="Telegram Alert"/>
+</p>
+
+---
+
+<a id="video"></a>
+## 🎥 Примеры видео выполнения тестов (Selenoid)
+
+<p align="center">
+  <img src="media/video1.gif" width="550" height="350" alt="Video Example"/>
+</p>
