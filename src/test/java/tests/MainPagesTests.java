@@ -1,31 +1,92 @@
 package tests;
 
 import data.Language;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import pages.MainPage;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 
-public class MainPagesTests extends MainPage{
 
+public class MainPagesTests extends TestBase{
 
     MainPage mainPage = new MainPage();
 
 
+
+
     @Test
+    @Feature("Проверка наличия информационных блоков на главной странице")
+    @Story("Проверка баннеров")
+    @Owner("Kolyshkin A.S.")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "test", url = "")
+    @DisplayName("Наличие информационных блоков на главной странице")
+    @Tag("banners")
+    void checkInformationBloc(){
+        mainPage.preconditions()
+                .checkInfoBlockWithBunners()
+                .checkBannersContent();
+
+    }
+
+    @Test
+    @Feature("Проверка информации в футере главной страницы")
+    @Story("Проверка футера")
+    @Owner("Kolyshkin A.S.")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "test", url = "")
+    @DisplayName("Проверка отображения логотипа и ссылок")
+    @Tag("banners")
+    void checkFooterBlock(){
+        mainPage.preconditions()
+                .checkFooterLogoElement()
+                .checkBannersContent()
+                .checkFooterElements();
+
+    }
+
+
+
+    @Test
+    @Feature("Проверка кнопки Куда Угодно с Главной страницы")
+    @Story("Проверка кнопок на главной странице")
+    @Owner("Kolyshkin A.S.")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "test", url = "")
+    @DisplayName("Проверка кнопки Куда Угодно с Главной страницы")
+    @Tag("banners")
+    void checkAnywhereButtonFromMainPage(){
+        mainPage.preconditions()
+                .anywhereButtonClick()
+                .checkBudgetButtom()
+                .checkH2TextSearch()
+                .checkPriceButton();
+
+    }
+
+    @Test
+    @Feature("Проверка поиска авиаперелета на главной странице")
+    @Story("Поиск авиаперелетов")
+    @Owner("Kolyshkin A.S.")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(value = "test", url = "")
+    @DisplayName("Поиск авиаперелетов с главной страницы")
+    @Tag("search")
     void mainPageSearchTravelTest(){
 
-        mainPage.openPage()
-                .bannerShouldBeAppear()
-                .removeBanner()
+        mainPage.preconditions()
                 .moveFrom()
                 .moveTo()
                 .deactivateCheckboksBooking()
@@ -43,16 +104,13 @@ public class MainPagesTests extends MainPage{
         );
     }
 
-
     @ParameterizedTest
     @MethodSource
+    @Tag("localization")
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
-        mainPage.openPage()
-                .bannerShouldBeAppear()
-                .clickLanguage()
+        mainPage.preconditions()
                 .checkButtonsLanguage(language, list);
-
     }
 
 }

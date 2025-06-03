@@ -2,32 +2,66 @@ package pages;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import data.Language;
 import io.qameta.allure.Step;
+import org.junit.jupiter.params.provider.Arguments;
 
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
+    private final String pageUrl = "https://freedom-travel.kz/";
+    private final String russianLanguage = "Русский";
+    private final String bookingSearchText = "Искать жилье на Booking.com";
+    private final String freedomFooterLogo = "https://aviata.kz/static/images/freedom/freedom-travel-logo-244x40.svg";
+    private final SelenideElement seccessButton = $("[type='button']");
+    private final SelenideElement moveFromElement = $("[placeholder='Откуда']");
+    private final SelenideElement moveToElement = $("[placeholder='Куда']");
+    private final ElementsCollection banners = $$("ul.grid.grid-cols-4 > li");
+    private final String[] expectedTitles = {
+            "Ищите варианты с поиском «Куда угодно»",
+            "Гарантия возврата 90% от стоимости билета",
+            "Бонусы за каждую покупку",
+            "Оплата через Apple pay и Google pay"
+    };
+    private final Map<String, String> footerLinks = Map.of(
+            "/about", "О компании",
+            "/agreement", "Публичная оферта",
+            "/security", "Безопасность",
+            "https://special.aviata.kz/job", "Вакансии",
+            "/contacts", "Контакты"
+    );
 
-    @Step("Открываем главную страницу")
+    SelenideElement banner = $(withText("Хорошо!"));
+
+    public MainPage preconditions(){
+        openPage();
+        bannerShouldBeAppear();
+        removeBanner();
+
+        return this;
+    }
+
+    @Step("Открываем главную страницу {pageUrl}")
     public MainPage openPage(){
-        open("https://freedom-travel.kz/");
+        open(pageUrl);
         return this;
     }
 
 
     @Step("Проверяем, что появился всплывающий баннер")
     public MainPage bannerShouldBeAppear() {
-        SelenideElement banner = $(withText("Хорошо!"));
+
         if (banner.exists()) {
             banner.shouldBe(visible);
             $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
@@ -44,20 +78,20 @@ public class MainPage {
 
     @Step("Кликаем на смену языка")
     public MainPage languageClick(){
-        $("[type='button']").$(withText("Русский")).click();
+        seccessButton.$(withText(russianLanguage)).click();
         return this;
     }
 
     @Step("Выбираем откуда мы отправляемся")
     public MainPage moveFrom(){
-        $("[placeholder='Откуда']").setValue("Алматы");
+        moveFromElement.setValue("Алматы");
         $$("div[tabindex='0']").findBy(text("Алматы")).click();
         return this;
     }
 
     @Step("Выбираем куда мы отправляемся")
     public MainPage moveTo(){
-        $("[placeholder='Куда']").setValue("Москва");
+        moveToElement.setValue("Москва");
         $$("div[tabindex='0']").findBy(text("Москва")).click();
         return this;
     }
@@ -70,7 +104,7 @@ public class MainPage {
 
     @Step("Деактивация чекбокса  Искать жилье на Booking.com")
     public MainPage deactivateCheckboksBooking(){
-        $(withText("Искать жилье на Booking.com")).click();
+        $(withText(bookingSearchText)).click();
         return this;
     }
 
@@ -97,6 +131,75 @@ public class MainPage {
         }
         return this;
     }
+
+
+    @Step("Проверяем наличие информационного блока с баннерами")
+    public MainPage checkInfoBlockWithBunners(){
+        $("h2.text-2xl.font-bold")
+                .shouldBe(visible, Duration.ofSeconds(10))
+                .shouldHave(text("Почему авиабилеты лучше покупать на Freedom Travel"));
+        return this;
+    }
+
+    @Step("Проверка текста на баннерах на русском языке")
+    public MainPage checkBannersContent() {
+
+        banners.shouldHave(CollectionCondition.size(4));
+
+        for (int i = 0; i < expectedTitles.length; i++) {
+            banners.get(i).shouldHave(text(expectedTitles[i])).shouldBe(visible);
+        }
+        return this;
+    }
+
+    @Step("Клик по кнопке куда угодно с Главной страницы")
+    public MainPage anywhereButtonClick(){
+
+        $(withText("Куда угодно")).click();
+        return this;
+    }
+
+    @Step("Проверяем, что элемент 'Бюджет' отображается")
+    public MainPage checkBudgetButtom(){
+        $x("//p[text()='Бюджет']").shouldBe(visible);
+        return this;
+    }
+
+    @Step("Проверяем, что элемент 'Казахстан' отображается")
+    public MainPage checkH2TextSearch(){
+        $("h2:text('Казахстан')").shouldBe(visible);
+        return this;
+    }
+
+    @Step("Проверка кнопки с ценой")
+    public MainPage checkPriceButton(){
+        $("button:has(span:text('Найти от'))").shouldBe(visible);
+
+        return this;
+    }
+
+
+    @Step("Проверяем наличие логотипа компании в футере")
+    public MainPage checkFooterLogoElement() {
+
+        $("figure[aria-label*='Freedom Travel']").scrollIntoView(true).shouldBe(visible);
+
+        return this;
+    }
+
+    @Step("Проверяем что элемент {1} находится в футере")
+    public MainPage checkFooterElements() {
+        footerLinks.forEach((href, linkText) -> {
+            SelenideElement link = $("a[href='" + href + "']");
+            link.shouldBe(Condition.visible)
+                    .shouldHave(Condition.text(linkText));
+        });
+        return this;
+    }
+
+
+
+
 
 
 }
