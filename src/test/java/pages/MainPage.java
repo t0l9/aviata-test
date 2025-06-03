@@ -14,6 +14,7 @@ import java.util.Map;
 
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -59,12 +60,12 @@ public class MainPage {
 
     @Step("Проверяем, что появился всплывающий баннер")
     public MainPage bannerShouldBeAppear() {
-        if (banner.isDisplayed()) {
-
-            okButton.shouldBe(visible).shouldHave(Condition.exactText("Хорошо!")).click();
+        if (banner.exists() && banner.isDisplayed()) {
+            $(byText("Хорошо!")).shouldBe(visible).click();
         }
         return this;
     }
+
 
 
 
