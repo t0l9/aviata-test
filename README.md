@@ -1,5 +1,5 @@
 
-<a href="https://usetech.ru/ "> <img src="media/usetech-logo-white.svg" width="200" height="200"> 
+<a href="https://usetech.ru/ "> <img src="media/img.png" width="200" height="200"> 
 <h1 >Проект по автоматизации тестирования для компании <a href="https://freedom-travel.kz/">Aviata</a></h1> 
 
 ## ☑️ Содержание:
