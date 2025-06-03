@@ -49,6 +49,8 @@ public class MainPage {
     public MainPage preconditions(){
         openPage();
         bannerShouldBeAppear();
+        removeBanner();
+        closeModalIfPresent();
         return this;
     }
 
@@ -61,19 +63,33 @@ public class MainPage {
     @Step("Проверяем, что появился всплывающий баннер")
     public MainPage bannerShouldBeAppear() {
         if (banner.exists() && banner.isDisplayed()) {
-            $(byText("Хорошо!")).shouldBe(visible).click();
+            $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
         }
         return this;
     }
 
 
-
-
     @Step("Убираем всплывающий баннер")
     public MainPage removeBanner(){
-        $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
+
+        if (banner.exists() && banner.isDisplayed()) {
+            $(".ui-btn").shouldHave(Condition.text("Хорошо!")).click();
+        }
         return this;
     }
+
+    @Step("Закрываем модальное окно, если оно появилось")
+    public MainPage closeModalIfPresent() {
+        SelenideElement modal = $(".app-modal");
+
+        if (modal.isDisplayed()) {
+            modal.$(byText("Хорошо!")).click(); // или найди другую кнопку, если она отличается
+            modal.shouldBe(Condition.disappear);
+        }
+
+        return this;
+    }
+
 
     @Step("Выбираем откуда мы отправляемся")
     public MainPage moveFrom(){
@@ -117,6 +133,7 @@ public class MainPage {
 
     @Step("проверяем название кнопок на {language.description} языке")
     public MainPage checkButtonsLanguage(Language language, List<String> list){
+
         $$("nav.absolute button").findBy(text(language.description)).click();
 
         for (String expected : list) {
