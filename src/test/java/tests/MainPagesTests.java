@@ -96,6 +96,9 @@ public class MainPagesTests extends TestBase{
     @ParameterizedTest
     @MethodSource
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("localization")})
+    @Feature("Проверка заголовков Меню в хедере главной страницы на 2 языках.")
+    @Story("Хэдер")
+    @Owner("Kolyshkin A.S.")
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
         mainPage.preconditions()
