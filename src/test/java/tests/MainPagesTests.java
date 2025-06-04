@@ -2,10 +2,7 @@ package tests;
 
 import data.Language;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -71,6 +68,7 @@ public class MainPagesTests extends TestBase{
     @Feature("Проверка поиска авиаперелета на главной странице")
     @Story("Поиск авиаперелетов")
     @Owner("Kolyshkin A.S.")
+    @Disabled("Тест валится при проверке на робота")
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "test", url = "")
     @DisplayName("Поиск авиаперелетов с главной страницы")
