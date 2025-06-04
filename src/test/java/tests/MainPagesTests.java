@@ -25,7 +25,7 @@ public class MainPagesTests extends TestBase{
     @Link(value = "test", url = "")
     @DisplayName("Наличие информационных блоков на главной странице")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("information")})
-    void checkInformationBloc(){
+    void checkInformationBlockTest(){
         mainPage.preconditions()
                 .checkInfoBlockWithBunners()
                 .checkBannersContent();
@@ -40,7 +40,7 @@ public class MainPagesTests extends TestBase{
     @Link(value = "test", url = "")
     @DisplayName("Проверка отображения логотипа и ссылок")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("footer")})
-    void checkFooterBlock(){
+    void checkFooterBlockTest(){
         mainPage.preconditions()
                 .checkFooterLogoElement()
                 .checkBannersContent()
@@ -56,7 +56,7 @@ public class MainPagesTests extends TestBase{
     @Link(value = "test", url = "")
     @DisplayName("Проверка кнопки Куда Угодно с Главной страницы")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
-    void checkAnywhereButtonFromMainPage(){
+    void checkAnywhereButtonFromMainPageTest(){
         mainPage.preconditions()
                 .anywhereButtonClick()
                 .checkBudgetButtom()
