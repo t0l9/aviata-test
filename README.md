@@ -79,7 +79,7 @@ clean UseTech
 ## 📊 Allure Report
 
 <p align="center">
-  <img src="media/AllureReport.jpg" width="850" alt="Allure Overview Dashboard"/>
+  <img src="media/allure.png" width="850" alt="Allure Overview Dashboard"/>
 </p>
 
 ---
@@ -88,13 +88,21 @@ clean UseTech
 ## 📩 Уведомления в Telegram
 
 <p align="center">
-  <img src="media/tgAllert.jpg" width="550" alt="Telegram Alert"/>
+  <img src="media/tgAllert.jpeg" width="550" alt="Telegram Alert"/>
 </p>
+
+## 📩 Подписаться на бота через QR код
+
+<p align="center">
+  <img src="media/tgSubscribe.jpeg" width="550" alt="Telegram Alert"/>
+</p>
+
+
 
 ---
 
 <a id="video"></a>
-## 🎥 Примеры видео выполнения тестов (Selenoid)
+## 🎥 Пример видео выполнения тестов (Selenoid)
 
 <p align="center">
   <img src="media/video1.gif" width="550" height="350" alt="Video Example"/>
