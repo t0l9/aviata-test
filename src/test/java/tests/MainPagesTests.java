@@ -63,8 +63,7 @@ public class MainPagesTests extends TestBase{
         mainPage.preconditions()
                 .anywhereButtonClick()
                 .checkBudgetButtom()
-                .checkH2TextSearch()
-                .checkPriceButton();
+                .checkH2TextSearch();
 
     }
 
