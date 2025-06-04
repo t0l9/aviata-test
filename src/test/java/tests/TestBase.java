@@ -19,7 +19,6 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "127.0");
 
-        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://freedom-travel.kz/";
         Configuration.pageLoadStrategy = "eager";
 
