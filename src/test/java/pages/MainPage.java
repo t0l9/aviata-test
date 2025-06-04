@@ -84,7 +84,6 @@ public class MainPage {
             modal.$(byText("Хорошо!")).click();
             modal.shouldBe(Condition.disappear);
         }
-
         return this;
     }
 

@@ -22,7 +22,6 @@ public class MainPagesTests extends TestBase{
     @Story("Проверка баннеров")
     @Owner("Kolyshkin A.S.")
     @Severity(SeverityLevel.NORMAL)
-    @Link(value = "test", url = "")
     @DisplayName("Наличие информационных блоков на главной странице")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("information")})
     void checkInformationBlockTest(){
@@ -37,7 +36,6 @@ public class MainPagesTests extends TestBase{
     @Story("Проверка футера")
     @Owner("Kolyshkin A.S.")
     @Severity(SeverityLevel.NORMAL)
-    @Link(value = "test", url = "")
     @DisplayName("Проверка отображения логотипа и ссылок")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("footer")})
     void checkFooterBlockTest(){
@@ -53,7 +51,6 @@ public class MainPagesTests extends TestBase{
     @Story("Проверка кнопок на главной странице")
     @Owner("Kolyshkin A.S.")
     @Severity(SeverityLevel.NORMAL)
-    @Link(value = "test", url = "")
     @DisplayName("Проверка кнопки Куда Угодно с Главной страницы")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
     void checkAnywhereButtonFromMainPageTest(){
@@ -70,7 +67,6 @@ public class MainPagesTests extends TestBase{
     @Owner("Kolyshkin A.S.")
     @Disabled("Тест валится при проверке на робота")
     @Severity(SeverityLevel.BLOCKER)
-    @Link(value = "test", url = "")
     @DisplayName("Поиск авиаперелетов с главной страницы")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
     void mainPageSearchTravelTest(){
@@ -98,6 +94,7 @@ public class MainPagesTests extends TestBase{
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("localization")})
     @Feature("Проверка заголовков Меню в хедере главной страницы на 2 языках.")
     @Story("Хэдер")
+    @Severity(SeverityLevel.BLOCKER)
     @Owner("Kolyshkin A.S.")
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
