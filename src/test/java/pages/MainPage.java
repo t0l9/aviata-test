@@ -129,7 +129,7 @@ public class MainPage {
     }
 
 
-    @Step("проверяем название кнопок на {language.description} языке")
+    @Step("Проверяем название кнопок на {language.description} языке")
     public MainPage checkButtonsLanguage(Language language, List<String> list){
 
         $$("nav.absolute button").findBy(text(language.description)).click();
