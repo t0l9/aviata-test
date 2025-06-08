@@ -21,7 +21,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPage {
 
     private final String pageUrl = "https://freedom-travel.kz/";
-    private final String russianLanguage = "Русский";
     private final String moscowCity = "Москва";
     private final String bookingSearchText = "Искать жилье на Booking.com";
     private final SelenideElement modal = $(".app-modal");
@@ -173,12 +172,6 @@ public class MainPage {
     @Step("Проверяем, что элемент 'Казахстан' отображается")
     public MainPage checkH2TextSearch(){
         $("h2.text-lg.font-bold").shouldHave(text("Казахстан"));
-        return this;
-    }
-
-    @Step("Проверка кнопки со стоимостью билета")
-    public MainPage checkPriceButton(){
-        $("button:has(span:text('Найти от'))").shouldBe(visible);
         return this;
     }
 
