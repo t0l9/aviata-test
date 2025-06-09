@@ -20,13 +20,76 @@
 ---
 
 <a id="tools"></a>
-## 🛠️ Технологии и инструменты
+<a id="tools"></a>
+<h2>🛠️ Технологии и инструменты</h2>
 
-| [Java](https://www.oracle.com/java/) | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | [GitHub](https://github.com) | [JUnit 5](https://junit.org/junit5/) | [Gradle](https://gradle.org) | [Selenide](https://selenide.org) | [Selenoid](https://aerokube.com/selenoid/) | [Allure Report](https://docs.qameta.io/allure/) | [Jenkins](https://www.jenkins.io/) | [Telegram](https://telegram.org) |
-|:------------------------------------:|:-----------------------------------------------:|:-----------------------------:|:------------------------------------:|:----------------------------:|:-------------------------------:|:-----------------------------------------:|:--------------------------------------------:|:-------------------------------:|:-----------------------------:|
-| <a href="https://www.oracle.com/java/"><img src="media/java-svgrepo-com.svg" width="50" height="50" alt="Java"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="media/intellij-idea-svgrepo-com.svg" width="50" height="50" alt="IDEA"/></a> | <a href="https://github.com"><img src="media/github-badge-svgrepo-com.svg" width="50" height="50" alt="GitHub"/></a> | <a href="https://junit.org/junit5/"><img src="media/Junit5.svg" width="50" height="50" alt="JUnit 5"/></a> | <a href="https://gradle.org"><img src="media/gradle-svgrepo-com.svg" width="50" height="50" alt="Gradle"/></a> | <a href="https://selenide.org"><img src="media/Selenide.svg" width="50" height="50" alt="Selenide"/></a> | <a href="https://aerokube.com/selenoid/"><img src="media/Selenoid.svg" width="50" height="50" alt="Selenoid"/></a> | <a href="https://docs.qameta.io/allure/"><img src="media/Allure.svg" width="50" height="50" alt="Allure"/></a> | <a href="https://www.jenkins.io/"><img src="media/Jenkins.svg" width="50" height="50" alt="Jenkins"/></a> | <a href="https://telegram.org"><img src="media/Telegram.svg" width="50" height="50" alt="Telegram"/></a> |
+<table>
+  <tr>
+    <th><a href="https://www.oracle.com/java/" target="_blank">Java</a></th>
+    <th><a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a></th>
+    <th><a href="https://github.com/" target="_blank">GitHub</a></th>
+    <th><a href="https://junit.org/junit5/" target="_blank">JUnit 5</a></th>
+    <th><a href="https://gradle.org/" target="_blank">Gradle</a></th>
+    <th><a href="https://selenide.org/" target="_blank">Selenide</a></th>
+    <th><a href="https://aerokube.com/selenoid/" target="_blank">Selenoid</a></th>
+    <th><a href="https://docs.qameta.io/allure/" target="_blank">Allure Report</a></th>
+    <th><a href="https://www.jenkins.io/" target="_blank">Jenkins</a></th>
+    <th><a href="https://telegram.org/" target="_blank">Telegram</a></th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://www.oracle.com/java/" target="_blank">
+        <img src="media/java-svgrepo-com.svg" width="50" height="50" alt="Java"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.jetbrains.com/idea/" target="_blank">
+        <img src="media/intellij-idea-svgrepo-com.svg" width="50" height="50" alt="IDEA"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/" target="_blank">
+        <img src="media/github-badge-svgrepo-com.svg" width="50" height="50" alt="GitHub"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://junit.org/junit5/" target="_blank">
+        <img src="media/Junit5.svg" width="50" height="50" alt="JUnit 5"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://gradle.org/" target="_blank">
+        <img src="media/gradle-svgrepo-com.svg" width="50" height="50" alt="Gradle"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://selenide.org/" target="_blank">
+        <img src="media/Selenide.svg" width="50" height="50" alt="Selenide"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://aerokube.com/selenoid/" target="_blank">
+        <img src="media/Selenoid.svg" width="50" height="50" alt="Selenoid"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://docs.qameta.io/allure/" target="_blank">
+        <img src="media/Allure.svg" width="50" height="50" alt="Allure"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.jenkins.io/" target="_blank">
+        <img src="media/Jenkins.svg" width="50" height="50" alt="Jenkins"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://telegram.org/" target="_blank">
+        <img src="media/Telegram.svg" width="50" height="50" alt="Telegram"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
----
 
 <a id="cases"></a>
 ## ✅ Реализованные проверки
