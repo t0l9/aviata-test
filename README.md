@@ -22,9 +22,9 @@
 <a id="tools"></a>
 ## 🛠️ Технологии и инструменты
 
-| Java | IntelliJ IDEA | GitHub | JUnit 5 | Gradle | Selenide | Selenoid | Allure Report | Jenkins | Telegram |
+| [Java](https://www.oracle.com/java/) | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | [GitHub](https://github.com) | [JUnit 5](https://junit.org/junit5/) | [Gradle](https://gradle.org) | [Selenide](https://selenide.org) | [Selenoid](https://aerokube.com/selenoid/) | [Allure Report](https://docs.qameta.io/allure/) | [Jenkins](https://www.jenkins.io/) | [Telegram](https://telegram.org/) |
 |:----:|:-------------:|:------:|:-------:|:------:|:--------:|:--------:|:-------------:|:-------:|:--------:|
-| <img src="media/java-svgrepo-com.svg" width="50" height="50" alt="Java"/> | <img src="media/intellij-idea-svgrepo-com.svg" width="50" height="50" alt="IDEA"/> | <img src="media/github-badge-svgrepo-com.svg" width="50" height="50" alt="GitHub"/> | <img src="media/Junit5.svg" width="50" height="50" alt="JUnit 5"/> | <img src="media/gradle-svgrepo-com.svg" width="50" height="50" alt="Gradle"/> | <img src="media/Selenide.svg" width="50" height="50" alt="Selenide"/> | <img src="media/Selenoid.svg" width="50" height="50" alt="Selenoid"/> | <img src="media/Allure.svg" width="50" height="50" alt="Allure"/> | <img src="media/Jenkins.svg" width="50" height="50" alt="Jenkins"/> | <img src="media/Telegram.svg" width="50" height="50" alt="Telegram"/> |
+| <a href="https://www.oracle.com/java/"><img src="media/java-svgrepo-com.svg" width="50" height="50" alt="Java"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="media/intellij-idea-svgrepo-com.svg" width="50" height="50" alt="IDEA"/></a> | <a href="https://github.com"><img src="media/github-badge-svgrepo-com.svg" width="50" height="50" alt="GitHub"/></a> | <a href="https://junit.org/junit5/"><img src="media/Junit5.svg" width="50" height="50" alt="JUnit 5"/></a> | <a href="https://gradle.org"><img src="media/gradle-svgrepo-com.svg" width="50" height="50" alt="Gradle"/></a> | <a href="https://selenide.org"><img src="media/Selenide.svg" width="50" height="50" alt="Selenide"/></a> | <a href="https://aerokube.com/selenoid/"><img src="media/Selenoid.svg" width="50" height="50" alt="Selenoid"/></a> | <a href="https://docs.qameta.io/allure/"><img src="media/Allure.svg" width="50" height="50" alt="Allure"/></a> | <a href="https://www.jenkins.io/"><img src="media/Jenkins.svg" width="50" height="50" alt="Jenkins"/></a> | <a href="https://telegram.org/"><img src="media/Telegram.svg" width="50" height="50" alt="Telegram"/></a> |
 
 ---
 
@@ -94,7 +94,7 @@ clean test
 ## 📩 Подписаться на бота через QR код
 
 <p align="center">
-  <img src="media/tgSubscribe.jpeg" width="550" alt="Telegram Alert"/>
+  <img src="media/tgSubscribe.jpeg" width="550" alt="Telegram Subscribe"/>
 </p>
 
 ---
