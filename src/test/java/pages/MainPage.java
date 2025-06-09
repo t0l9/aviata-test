@@ -44,14 +44,6 @@ public class MainPage {
 
     SelenideElement banner = $(withText("Хорошо!"));
 
-    public MainPage preconditions(){
-        openPage();
-        bannerShouldBeAppear();
-        removeBanner();
-        closeModalIfPresent();
-        return this;
-    }
-
     @Step("Открываем главную страницу")
     public MainPage openPage(){
         open(pageUrl);

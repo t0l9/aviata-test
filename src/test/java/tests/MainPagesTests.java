@@ -25,7 +25,10 @@ public class MainPagesTests extends TestBase{
     @DisplayName("Наличие информационных блоков на главной странице")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("information")})
     void checkInformationBlockTest(){
-        mainPage.preconditions()
+        mainPage.openPage()
+                .bannerShouldBeAppear()
+                .removeBanner()
+                .closeModalIfPresent()
                 .checkInfoBlockWithBunners()
                 .checkBannersContent();
 
@@ -39,7 +42,10 @@ public class MainPagesTests extends TestBase{
     @DisplayName("Проверка отображения логотипа и ссылок")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("footer")})
     void checkFooterBlockTest(){
-        mainPage.preconditions()
+        mainPage.openPage()
+                .bannerShouldBeAppear()
+                .removeBanner()
+                .closeModalIfPresent()
                 .checkFooterLogoElement()
                 .checkBannersContent()
                 .checkFooterElements();
@@ -54,7 +60,10 @@ public class MainPagesTests extends TestBase{
     @DisplayName("Проверка кнопки Куда Угодно с Главной страницы")
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
     void checkAnywhereButtonFromMainPageTest(){
-        mainPage.preconditions()
+        mainPage.openPage()
+                .bannerShouldBeAppear()
+                .removeBanner()
+                .closeModalIfPresent()
                 .anywhereButtonClick()
                 .checkBudgetButtom()
                 .checkH2TextSearch();
@@ -71,7 +80,10 @@ public class MainPagesTests extends TestBase{
     @Tags({@Tag("auto"), @Tag("smoke"), @Tag("regression"), @Tag("search")})
     void mainPageSearchTravelTest(){
 
-        mainPage.preconditions()
+        mainPage.openPage()
+                .bannerShouldBeAppear()
+                .removeBanner()
+                .closeModalIfPresent()
                 .moveFrom()
                 .moveTo()
                 .deactivateCheckboksBooking()
@@ -98,7 +110,10 @@ public class MainPagesTests extends TestBase{
     @Owner("Kolyshkin A.S.")
     void checkUpMenuButtomsElementsTest(Language language, List<String> list){
 
-        mainPage.preconditions()
+        mainPage.openPage()
+                .bannerShouldBeAppear()
+                .removeBanner()
+                .closeModalIfPresent()
                 .clickLanguage()
                 .checkButtonsLanguage(language, list);
     }
